@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi CV</title>
+  <style>
+    html, body { height: 100%; margin: 0; }
+    .wrap { height: 100%; display: flex; flex-direction: column; }
+    header { padding: 12px 16px; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    main { flex: 1; }
+    .viewer { width: 100%; height: 100%; border: none; }
+    .fallback { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 16px; }
+    .bar { background: #f5f5f5; border-bottom: 1px solid #e5e5e5; }
+    a.button { display: inline-block; padding: 8px 12px; border-radius: 10px; text-decoration: none; border: 1px solid #d0d0d0; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header class="bar">
+      <strong>Mi CV</strong>
+      <span style="opacity:.6"> &mdash; PDF embebido</span>
+      <span style="float:right">
+        <a class="button" href="CV.pdf" download>Descargar PDF</a>
+      </span>
+    </header>
+    <main>
+      <object class="viewer" data="CV.pdf" type="application/pdf">
+        <iframe class="viewer" src="CV.pdf"></iframe>
+        <div class="fallback">
+          Tu navegador no pudo mostrar el PDF.
+          <a href="CV.pdf">Ábrelo o descárgalo aquí</a>.
+        </div>
+      </object>
+    </main>
+  </div>
+</body>
+</html>
